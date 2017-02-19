@@ -18,8 +18,9 @@ ActiveRecord::Schema.define(version: 20170219192413) do
   create_table "movies", force: :cascade do |t|
     t.string   "imdb_id"
     t.string   "poster_path"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "views",       default: 1, null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
 end
