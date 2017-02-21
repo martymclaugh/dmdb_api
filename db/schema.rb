@@ -16,11 +16,44 @@ ActiveRecord::Schema.define(version: 20170219192413) do
   enable_extension "plpgsql"
 
   create_table "movies", force: :cascade do |t|
-    t.string   "imdb_id"
-    t.string   "poster_path"
-    t.integer  "views",       default: 1, null: false
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.integer  "views",             default: 1, null: false
+    t.string   "Actors"
+    t.string   "Awards"
+    t.string   "BoxOffice"
+    t.string   "Country"
+    t.string   "DVD"
+    t.string   "Director"
+    t.string   "Genre"
+    t.string   "Language"
+    t.string   "Metascore"
+    t.text     "Plot"
+    t.string   "Poster"
+    t.string   "Production"
+    t.string   "Rated"
+    t.string   "Released"
+    t.string   "Response"
+    t.string   "Runtime"
+    t.string   "Title"
+    t.string   "Type"
+    t.string   "Website"
+    t.text     "Writer"
+    t.string   "Year"
+    t.string   "imdbID"
+    t.string   "imdbRating"
+    t.string   "imdbVotes"
+    t.text     "tomatoConsensus"
+    t.string   "tomatoFresh"
+    t.string   "tomatoImage"
+    t.string   "tomatoMeter"
+    t.string   "tomatoRating"
+    t.string   "tomatoReviews"
+    t.string   "tomatoRotten"
+    t.string   "tomatoURL"
+    t.string   "tomatoUserMeter"
+    t.string   "tomatoUserRating"
+    t.string   "tomatoUserReviews"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
   end
 
 end
