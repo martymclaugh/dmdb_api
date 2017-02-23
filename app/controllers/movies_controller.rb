@@ -1,15 +1,14 @@
 class MoviesController < ApplicationController
   def create
     @movie = Movie.find_by(imdbID: params[:movie][:imdbID])
-    if @movie
-      @movie.update(views: @movie.views + 1)
-    else
-      @movie = Movie.create(movie_params)
-    end
+    # either update movie views or create movie object
+    @movie ? @movie.update(views: @movie.views + 1) : @movie = Movie.create(movie_params)
   end
 
   def index
+    @recently_viewed = Movie.order(updated_at: :desc).limit(20)
     # grab most recently created movies
+    render json: @recently_viewed
   end
 
   private
